@@ -85,20 +85,73 @@ io.on('connection', (socket) => {
     io.emit('presence:update', Array.from(onlineUsers.keys()));
   }
 
-  socket.on('chat:join', (chatId) => {
+  socket.on('chat:join', async (chatId) => {
     socket.join(`chat:${chatId}`);
+    // Auto-mark all messages in this chat as read for this user
+    try {
+      await Message.updateMany(
+        { chatId, readBy: { $nin: [socket.userId] } },
+        { $addToSet: { readBy: socket.userId } }
+      );
+      // Fetch updated readBy for the latest messages so sender sees ticks
+      const msgs = await Message.find({ chatId }).select('_id readBy').lean();
+      io.to(`chat:${chatId}`).emit('chat:read', { chatId, userId: socket.userId, messages: msgs });
+    } catch (e) {
+      console.log('chat:join read error', e);
+    }
   });
 
   socket.on('chat:message', async (payload) => {
     try {
       const { chatId, content, receiverId } = payload || {};
       if (!chatId || !content) return;
-      const message = await Message.create({ chatId, senderId: socket.userId, receiverId, content });
+      const message = await Message.create({ chatId, senderId: socket.userId, receiverId, content, readBy: [socket.userId] });
       const populated = await Message.findById(message._id).populate('senderId', 'username');
       const shaped = { ...populated.toObject(), senderName: populated.senderId?.username };
       io.to(`chat:${chatId}`).emit('chat:message', shaped);
     } catch (e) {
       console.log(e);
+    }
+  });
+
+  socket.on('chat:read', async ({ chatId }) => {
+    try {
+      await Message.updateMany(
+        { chatId, readBy: { $nin: [socket.userId] } },
+        { $addToSet: { readBy: socket.userId } }
+      );
+      const msgs = await Message.find({ chatId }).select('_id readBy').lean();
+      io.to(`chat:${chatId}`).emit('chat:read', { chatId, userId: socket.userId, messages: msgs });
+    } catch (e) {
+      console.log('chat:read error', e);
+    }
+  });
+
+  socket.on('chat:message:edit', async ({ messageId, content }) => {
+    try {
+      if (!messageId || !content?.trim()) return;
+      const message = await Message.findById(messageId);
+      if (!message || String(message.senderId) !== String(socket.userId)) return;
+      message.content = content.trim();
+      message.edited = true;
+      await message.save();
+      io.to(`chat:${message.chatId}`).emit('chat:message:edit', { messageId, content: message.content, edited: true });
+    } catch (e) {
+      console.log('chat:message:edit error', e);
+    }
+  });
+
+  socket.on('chat:message:delete', async ({ messageId }) => {
+    try {
+      if (!messageId) return;
+      const message = await Message.findById(messageId);
+      if (!message || String(message.senderId) !== String(socket.userId)) return;
+      message.deleted = true;
+      message.content = '';
+      await message.save();
+      io.to(`chat:${message.chatId}`).emit('chat:message:delete', { messageId, chatId: String(message.chatId) });
+    } catch (e) {
+      console.log('chat:message:delete error', e);
     }
   });
 

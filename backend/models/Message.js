@@ -23,7 +23,15 @@ const messageSchema = new mongoose.Schema({
   readBy: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
-  }]
+  }],
+  edited: {
+    type: Boolean,
+    default: false
+  },
+  deleted: {
+    type: Boolean,
+    default: false
+  }
 }, { timestamps: true });
 
 const Message = mongoose.model('Message', messageSchema);
