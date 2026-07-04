@@ -1,79 +1,99 @@
 # Super Tribble
 
-This is a productivity-focused Reddit-style website. Users can join communities, post, comment, chat, track tasks, build habits, and collaborate in study rooms.
+Super Tribble is a productivity-focused, community-driven Reddit-style platform where users can join communities, post, comment, chat, track tasks, build habits, and collaborate in real-time study rooms.
 
-This is the public version of Super Tribble meant for showcase, PRs will probably not be merged but will be reviewed and closed
+This is the public repository of Super Tribble. Check out [FEATURES.md](FEATURES.md) for a detailed breakdown of all user-facing features.
 
-## Tech Stack
-- Backend: Node.js, Express, MongoDB, Socket.IO  
-- Frontend: React, TailwindCSS, Axios  
-- Authentication: JWT  
-- Containerization: Docker
-- Deployment: Render
-- Development tools: Git, Thunderclient
-- Package manager: npm
+---
 
-## Features
-- User authentication (signup, login, JWT-based sessions)  
-- Create and join communities (public and private/invite-only)  
-- Create posts inside communities  
-- Commenting on posts  
-- Voting system (upvotes and downvotes combined into a single karma count for posts and users)  
-- One-on-one and group chat using Socket.IO  
-- A chats page to see all ongoing conversations  
-- Study rooms with active timers showing how long each user has been online  
-- Task tracker with filters and status (pending, in-progress, done)  
-- Habit tracker with streaks and a calendar-style progress view  
+## 🛠️ Tech Stack
+- **Backend:** Node.js, Express, MongoDB, Socket.IO  
+- **Frontend:** React, TailwindCSS, Axios  
+- **Authentication:** JWT  
+- **Containerization:** Docker  
+- **Deployment:** Render  
+- **Package Manager:** npm  
 
-## Setup
+---
 
-1. Clone the repo  
-   ```bash
-   git clone <repo-link>
-   cd <project-folder>
-   ```
+## 🚀 Key Features
+- **User Authentication:** Signup, login, and JWT-backed persistent sessions.
+- **Communities & Posts:** Create, join, and post within public or private/invite-only sub-communities.
+- **Threaded Comments & Voting:** Upvote/downvote system with nested, threaded comments.
+- **Real-Time Chats:** Direct Messaging (DMs) and public/private group chats powered by Socket.IO.
+- **Read Receipts (New!):** Single and double tick indicators (`✓`/`✓✓`) showing when messages are read.
+- **Message Editing & Deletion (New!):** Edit message contents inline or soft-delete them in real time.
+- **Collaborative Study Rooms:** Join rooms with live session timers showing online duration for active users.
+- **Productivity Dashboard:** Task tracking (Kanban filtering) and Habit tracking (streaks and progress calendars).
+- **API Documentation:** Interactive developer API reference at [docs/API.md](docs/API.md).
 
-2. Install frontend dependencies
-   ```bash
-   cd frontend 
-   npm install
-   ```
+---
 
-3. Install frontend dependencies
-   ```bash
-   cd backend
-   npm install
-   ```
+## 💻 Setup & Installation
 
-3. Add a `.env` file in the root with the following:  
-   ```
-   PORT=5000
-   MONGO_URI=mongodb-uri
-   JWT_SECRET=your-secret
-   ```
+### Prerequisites
+- Node.js (v18+)
+- MongoDB (running locally or via Docker)
 
-4. Run the backend  
-   ```bash
-   cd backend
-   npm run dev
-   ```
+### 1. Clone the repository
+```bash
+git clone https://github.com/Janmesh23/super-tribble.git
+cd super-tribble
+```
 
-5. Run the frontend  
-   ```bash
-   cd frontend
-   npm run dev
-   ```
+### 2. Install backend dependencies
+```bash
+cd backend
+npm install
+```
 
-## Project Structure
+### 3. Install frontend dependencies
+```bash
+cd ../frontend
+npm install
+```
+
+### 4. Environment Variables Setup
+
+Create a `.env` file inside the `backend` directory:
+```env
+PORT=5001
+MONGO_URI=mongodb://localhost:27017/super-tribble
+JWT_SECRET=your_jwt_secret_key_here
+CORS_ORIGINS=http://localhost:5173
+```
+
+Create a `.env` file inside the `frontend` directory:
+```env
+VITE_API_URL=http://localhost:5001
+```
+
+### 5. Running the Application
+
+Start the Backend Server (from `/backend`):
+```bash
+npm run dev
+```
+
+Start the Frontend Dev Server (from `/frontend`):
+```bash
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## 📁 Project Structure
 ```
 /backend
-   /config
-   /models
-   /routes
-   /controllers
-   server.js
+   /config         # Database connection logic
+   /models         # Mongoose schemas (User, Post, Message, etc.)
+   /routes         # API routes
+   /controllers    # Business logic functions
+   server.js       # Main server entry & socket handler
 /frontend
    /src
-      /components
-      /pages
+      /components  # Shared layout & UI components
+      /pages       # Router pages (Chats, Habits, Profile, etc.)
 ```
