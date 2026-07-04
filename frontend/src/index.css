@@ -20,15 +20,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-proddit-orange hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-tribble-orange hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
   }
   
   .btn-secondary {
-    @apply bg-proddit-blue hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-tribble-blue hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
   }
   
   .btn-outline {
-    @apply border-2 border-proddit-orange text-proddit-orange hover:bg-proddit-orange hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply border-2 border-tribble-orange text-tribble-orange hover:bg-tribble-orange hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
   }
   
   .card {
@@ -36,7 +36,7 @@
   }
   
   .input-field {
-    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-proddit-orange focus:border-transparent;
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-tribble-orange focus:border-transparent;
   }
   
   .post-card {
@@ -56,15 +56,15 @@
   }
   
   .vote-button {
-    @apply flex items-center space-x-1 text-gray-500 hover:text-proddit-orange transition-colors duration-200;
+    @apply flex items-center space-x-1 text-gray-500 hover:text-tribble-orange transition-colors duration-200;
   }
   
   .vote-button.upvoted {
-    @apply text-proddit-orange;
+    @apply text-tribble-orange;
   }
   
   .vote-button.downvoted {
-    @apply text-proddit-blue;
+    @apply text-tribble-blue;
   }
   
   .navbar {
@@ -72,11 +72,11 @@
   }
   
   .navbar-brand {
-    @apply text-2xl font-bold text-proddit-orange;
+    @apply text-2xl font-bold text-tribble-orange;
   }
   
   .nav-link {
-    @apply text-gray-700 dark:text-dark-text hover:text-proddit-orange transition-colors duration-200;
+    @apply text-gray-700 dark:text-dark-text hover:text-tribble-orange transition-colors duration-200;
   }
   
   .community-card {
@@ -88,7 +88,7 @@
   }
   
   .community-avatar {
-    @apply w-12 h-12 bg-proddit-orange rounded-full flex items-center justify-center text-white font-bold text-lg;
+    @apply w-12 h-12 bg-tribble-orange rounded-full flex items-center justify-center text-white font-bold text-lg;
   }
   
   .form-container {
@@ -108,11 +108,11 @@
   }
   
   .form-input {
-    @apply w-full px-3 py-2 border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-proddit-orange focus:border-transparent bg-white dark:bg-dark-card text-gray-900 dark:text-dark-text;
+    @apply w-full px-3 py-2 border border-gray-300 dark:border-dark-border rounded-lg focus:outline-none focus:ring-2 focus:ring-tribble-orange focus:border-transparent bg-white dark:bg-dark-card text-gray-900 dark:text-dark-text;
   }
   
   .form-button {
-    @apply w-full bg-proddit-orange hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply w-full bg-tribble-orange hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
   }
   
   .main-container {
@@ -128,6 +128,6 @@
   }
   
   .sidebar-item {
-    @apply flex items-center space-x-2 py-2 text-gray-600 dark:text-dark-text-secondary hover:text-proddit-orange transition-colors duration-200 cursor-pointer;
+    @apply flex items-center space-x-2 py-2 text-gray-600 dark:text-dark-text-secondary hover:text-tribble-orange transition-colors duration-200 cursor-pointer;
   }
 }

@@ -103,7 +103,7 @@ const CreatePost = () => {
       <div className="max-w-4xl mx-auto px-4">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-dark-text">Create a New Post</h1>
-          <p className="text-gray-600 dark:text-dark-text-secondary mt-2">Share your thoughts with the Proddit community</p>
+          <p className="text-gray-600 dark:text-dark-text-secondary mt-2">Share your thoughts with the Super Tribble community</p>
         </div>
 
         <div className="card">

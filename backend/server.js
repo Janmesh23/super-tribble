@@ -121,5 +121,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Proddit server running on port ${PORT}`);
+  console.log(`Super Tribble server running on port ${PORT}`);
 });

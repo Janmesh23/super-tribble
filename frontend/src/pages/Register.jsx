@@ -63,11 +63,11 @@ const Register = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
           <div className="w-12 h-12 bg-proddit-orange rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">P</span>
+            <span className="text-white font-bold text-xl">ST</span>
           </div>
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-dark-text">
-          Create your Proddit account
+          Create your Super Tribble account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600 dark:text-dark-text-secondary">
           Or{' '}

@@ -193,22 +193,22 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
     <div className="card mb-4 hover:shadow-lg transition-shadow duration-200">
       {/* Post Header */}
       <div className="flex items-center space-x-3 mb-4">
-        <div className="w-8 h-8 bg-proddit-orange rounded-full flex items-center justify-center">
-          <span className="text-white font-bold text-sm">P</span>
+        <div className="w-8 h-8 bg-tribble-orange rounded-full flex items-center justify-center">
+          <span className="text-white font-bold text-sm">S</span>
         </div>
         <div className="flex-1">
           <div className="flex items-center space-x-2">
             {post.community && (
               <>
                 <span className="text-sm text-gray-600">Posted in</span>
-                <Link to={`/communities/${post.community._id}`} className="text-sm font-semibold text-proddit-blue hover:text-blue-600">
+                <Link to={`/communities/${post.community._id}`} className="text-sm font-semibold text-tribble-blue hover:text-blue-600">
                   r/{post.community.name}
                 </Link>
                 <span className="text-sm text-gray-500">•</span>
               </>
             )}
             <span className="text-sm text-gray-600 dark:text-dark-text-secondary">Posted by</span>
-            <Link to={`/profile/${post.author.username}`} className="font-semibold text-gray-900 dark:text-dark-text hover:text-proddit-orange">
+            <Link to={`/profile/${post.author.username}`} className="font-semibold text-gray-900 dark:text-dark-text hover:text-tribble-orange">
               {post.author.username}
             </Link>
             <span className="text-sm text-gray-500 dark:text-dark-text-secondary">•</span>
@@ -256,8 +256,8 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
             disabled={voting || !user}
             className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors duration-200 ${
               userVote === 1 
-                ? 'text-proddit-orange bg-orange-50' 
-                : 'text-gray-500 hover:text-proddit-orange hover:bg-orange-50'
+                ? 'text-tribble-orange bg-orange-50' 
+                : 'text-gray-500 hover:text-tribble-orange hover:bg-orange-50'
             } ${(!user || post.author._id === user._id) ? 'opacity-50' : ''}`}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -301,7 +301,7 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
           {/* Comment Button */}
           <button
             onClick={toggleComments}
-            className="flex items-center space-x-2 text-gray-500 hover:text-proddit-orange transition-colors duration-200"
+            className="flex items-center space-x-2 text-gray-500 hover:text-tribble-orange transition-colors duration-200"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -333,7 +333,7 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
                 value={commentContent}
                 onChange={(e) => setCommentContent(e.target.value)}
                 placeholder="Write a comment..."
-                className="w-full p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-proddit-orange"
+                className="w-full p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-tribble-orange"
                 rows={3}
                 maxLength={10000}
               />
@@ -353,7 +353,7 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
           ) : (
             <div className="mb-4 p-3 bg-gray-50 rounded-lg text-center">
               <p className="text-gray-600 text-sm">
-                <Link to="/login" className="text-proddit-orange hover:underline font-medium">Log in</Link> to comment on this post
+                <Link to="/login" className="text-tribble-orange hover:underline font-medium">Log in</Link> to comment on this post
               </p>
             </div>
           )}
@@ -362,7 +362,7 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
           <div className="space-y-4">
             {loadingComments ? (
               <div className="text-center py-4">
-                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-proddit-orange mx-auto"></div>
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-tribble-orange mx-auto"></div>
                 <p className="mt-2 text-sm text-gray-500">Loading comments...</p>
               </div>
             ) : comments.length === 0 ? (
@@ -373,14 +373,14 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
               comments.map(comment => (
                 <div key={comment._id} className="bg-gray-50 rounded-lg p-3">
                   <div className="flex items-start space-x-2">
-                    <div className="w-6 h-6 bg-proddit-orange rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-6 h-6 bg-tribble-orange rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white font-bold text-xs">
                         {comment.author.username.charAt(0).toUpperCase()}
                       </span>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center space-x-2 mb-1">
-                        <Link to={`/profile/${comment.author.username}`} className="font-medium text-sm text-gray-900 hover:text-proddit-orange">
+                        <Link to={`/profile/${comment.author.username}`} className="font-medium text-sm text-gray-900 hover:text-tribble-orange">
                           {comment.author.username}
                         </Link>
                         <span className="text-xs text-gray-500">
@@ -407,8 +407,8 @@ const Post = ({ post, onVoteUpdate, onDelete }) => {
                           disabled={!user || comment.author._id === user._id}
                           className={`flex items-center space-x-1 px-2 py-1 rounded text-xs transition-colors duration-200 ${
                             commentVotes[comment._id] === 1 
-                              ? 'text-proddit-orange bg-orange-50' 
-                              : 'text-gray-500 hover:text-proddit-orange hover:bg-orange-50'
+                              ? 'text-tribble-orange bg-orange-50' 
+                              : 'text-gray-500 hover:text-tribble-orange hover:bg-orange-50'
                           } ${(!user || comment.author._id === user._id) ? 'opacity-50' : ''}`}
                         >
                           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">

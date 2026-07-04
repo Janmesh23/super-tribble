@@ -1,7 +1,7 @@
 {
-  "name": "proddit-backend",
+  "name": "super-tribble-backend",
   "version": "1.0.0",
-  "description": "Backend for Proddit - A Reddit-like application",
+  "description": "Backend for Super Tribble - A Reddit-like productivity platform",
   "main": "server.js",
   "type": "module",
   "scripts": {

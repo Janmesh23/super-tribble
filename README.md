@@ -1,8 +1,8 @@
-# Proddit
+# Super Tribble
 
 This is a productivity-focused Reddit-style website. Users can join communities, post, comment, chat, track tasks, build habits, and collaborate in study rooms.
 
-This is the public version of proddit meant for showcase, PRs will probably not be merged but will be reviewed and closed
+This is the public version of Super Tribble meant for showcase, PRs will probably not be merged but will be reviewed and closed
 
 ## Tech Stack
 - Backend: Node.js, Express, MongoDB, Socket.IO  

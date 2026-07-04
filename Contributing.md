@@ -1,6 +1,6 @@
-# Contributing to Proddit
+# Contributing to Super Tribble
 
-Thank you for your interest in contributing to Proddit! We welcome contributions of all kinds, from bug fixes to new features.
+Thank you for your interest in contributing to Super Tribble! We welcome contributions of all kinds, from bug fixes to new features.
 
 To ensure a smooth collaboration, please follow these guidelines:
 
@@ -28,4 +28,4 @@ To ensure a smooth collaboration, please follow these guidelines:
 
 ## Communication
 - Be respectful and constructive in all interactions.
-- We value your time and effort – thank you for helping make Proddit better!
+- We value your time and effort – thank you for helping make Super Tribble better!

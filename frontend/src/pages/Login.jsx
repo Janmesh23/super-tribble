@@ -45,11 +45,11 @@ const Login = () => {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
           <div className="w-12 h-12 bg-proddit-orange rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">P</span>
+            <span className="text-white font-bold text-xl">ST</span>
           </div>
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-dark-text">
-          Sign in to Proddit
+          Sign in to Super Tribble
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600 dark:text-dark-text-secondary">
           Or{' '}
@@ -123,7 +123,7 @@ const Login = () => {
                 <div className="w-full border-t border-gray-300" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">New to Proddit?</span>
+                <span className="px-2 bg-white text-gray-500">New to Super Tribble?</span>
               </div>
             </div>
 

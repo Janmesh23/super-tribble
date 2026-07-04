@@ -8,10 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'proddit-orange': '#FF4500',
-        'proddit-blue': '#0079D3',
-        'proddit-dark': '#1A1A1B',
-        'proddit-light': '#F8F9FA',
+        'tribble-orange': '#FF4500',
+        'tribble-blue': '#0079D3',
+        'tribble-dark': '#1A1A1B',
+        'tribble-light': '#F8F9FA',
         // Dark mode colors
         'dark-bg': '#1a1a1b',
         'dark-card': '#272729',

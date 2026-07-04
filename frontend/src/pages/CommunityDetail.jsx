@@ -111,7 +111,7 @@ const CommunityDetail = () => {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-dark-bg flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-proddit-orange mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-tribble-orange mx-auto"></div>
           <p className="mt-4 text-gray-600 dark:text-dark-text-secondary">Loading community...</p>
         </div>
       </div>
@@ -139,7 +139,7 @@ const CommunityDetail = () => {
         <div className="bg-white dark:bg-dark-card rounded-lg shadow-sm border border-gray-200 dark:border-dark-border p-6 mb-8">
           <div className="flex items-start space-x-4">
             <div className="relative">
-              <div className="w-16 h-16 bg-proddit-orange rounded-full flex items-center justify-center overflow-hidden">
+              <div className="w-16 h-16 bg-tribble-orange rounded-full flex items-center justify-center overflow-hidden">
                 {community.avatar ? (
                   <img 
                     src={community.avatar} 
@@ -152,7 +152,7 @@ const CommunityDetail = () => {
               </div>
               {(community.creator?._id === user?._id || community.moderators?.some(mod => mod._id === user?._id)) && (
                 <div className="absolute -bottom-1 -right-1">
-                  <label className="cursor-pointer bg-proddit-orange text-white rounded-full p-1 hover:bg-orange-600 transition-colors">
+                  <label className="cursor-pointer bg-tribble-orange text-white rounded-full p-1 hover:bg-orange-600 transition-colors">
                     <input
                       type="file"
                       accept="image/*"
@@ -212,7 +212,7 @@ const CommunityDetail = () => {
                   onClick={() => handleSortChange('newest')}
                   className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                     sortBy === 'newest'
-                      ? 'bg-proddit-orange text-white'
+                      ? 'bg-tribble-orange text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -222,7 +222,7 @@ const CommunityDetail = () => {
                   onClick={() => handleSortChange('oldest')}
                   className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                     sortBy === 'oldest'
-                      ? 'bg-proddit-orange text-white'
+                      ? 'bg-tribble-orange text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -232,7 +232,7 @@ const CommunityDetail = () => {
                   onClick={() => handleSortChange('karma')}
                   className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                     sortBy === 'karma'
-                      ? 'bg-proddit-orange text-white'
+                      ? 'bg-tribble-orange text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -307,7 +307,7 @@ const CommunityDetail = () => {
         <div className="mt-8 text-center">
           <Link 
             to="/communities" 
-            className="text-proddit-orange hover:text-orange-600 font-medium"
+            className="text-tribble-orange hover:text-orange-600 font-medium"
           >
             ← Back to Communities
           </Link>

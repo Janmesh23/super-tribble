@@ -112,7 +112,7 @@ const Home = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-proddit-orange mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-tribble-orange mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading posts...</p>
         </div>
       </div>
@@ -128,7 +128,7 @@ const Home = () => {
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-dark-text mb-4">Welcome to Proddit</h1>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-dark-text mb-4">Welcome to Super Tribble</h1>
               <p className="text-gray-600 dark:text-dark-text-secondary">
                 {user 
                   ? 'Discover and share the best content on the internet'
@@ -173,7 +173,7 @@ const Home = () => {
                   onClick={() => handleSortChange('newest')}
                   className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                     sortBy === 'newest'
-                      ? 'bg-proddit-orange text-white'
+                      ? 'bg-tribble-orange text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -183,7 +183,7 @@ const Home = () => {
                   onClick={() => handleSortChange('oldest')}
                   className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                     sortBy === 'oldest'
-                      ? 'bg-proddit-orange text-white'
+                      ? 'bg-tribble-orange text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -193,7 +193,7 @@ const Home = () => {
                   onClick={() => handleSortChange('votes')}
                   className={`px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                     sortBy === 'votes'
-                      ? 'bg-proddit-orange text-white'
+                      ? 'bg-tribble-orange text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -209,7 +209,7 @@ const Home = () => {
                   onClick={() => setShowCommunityFilter(!showCommunityFilter)}
                   className={`community-filter px-3 py-1 rounded-md text-sm font-medium transition-colors duration-200 ${
                     selectedCommunity
-                      ? 'bg-proddit-blue text-white'
+                      ? 'bg-tribble-blue text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -224,7 +224,7 @@ const Home = () => {
                         placeholder="Search communities..."
                         value={communitySearch}
                         onChange={(e) => setCommunitySearch(e.target.value)}
-                        className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-proddit-orange"
+                        className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-tribble-orange"
                       />
                     </div>
                     <div className="max-h-48 overflow-y-auto">
@@ -234,7 +234,7 @@ const Home = () => {
                           setShowCommunityFilter(false);
                         }}
                         className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-50 ${
-                          !selectedCommunity ? 'bg-proddit-orange text-white' : 'text-gray-700'
+                          !selectedCommunity ? 'bg-tribble-orange text-white' : 'text-gray-700'
                         }`}
                       >
                         All Communities
@@ -247,7 +247,7 @@ const Home = () => {
                             setShowCommunityFilter(false);
                           }}
                           className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-50 ${
-                            selectedCommunity === community._id ? 'bg-proddit-orange text-white' : 'text-gray-700'
+                            selectedCommunity === community._id ? 'bg-tribble-orange text-white' : 'text-gray-700'
                           }`}
                         >
                           r/{community.name}
@@ -275,7 +275,7 @@ const Home = () => {
                 </span>
                 <button
                   onClick={() => setSelectedCommunity('')}
-                  className="text-sm text-proddit-orange hover:text-orange-600"
+                  className="text-sm text-tribble-orange hover:text-orange-600"
                 >
                   Clear Filter
                 </button>
@@ -351,7 +351,7 @@ const Home = () => {
         {/* Loading More Indicator */}
         {loading && posts.length > 0 && (
           <div className="text-center py-4">
-            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-proddit-orange mx-auto"></div>
+            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-tribble-orange mx-auto"></div>
             <p className="mt-2 text-sm text-gray-600">Loading more posts...</p>
           </div>
         )}

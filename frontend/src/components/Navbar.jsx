@@ -18,10 +18,10 @@ const Navbar = () => {
           {/* Logo and Brand */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-proddit-orange rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">P</span>
+              <div className="w-8 h-8 bg-tribble-orange rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-lg">S</span>
               </div>
-              <span className="text-2xl font-bold text-proddit-orange">Proddit</span>
+              <span className="text-2xl font-bold text-tribble-orange">Super Tribble</span>
             </Link>
           </div>
 
@@ -29,13 +29,13 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
-              className="text-gray-700 dark:text-dark-text hover:text-proddit-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              className="text-gray-700 dark:text-dark-text hover:text-tribble-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
             >
               Home
             </Link>
             <Link 
               to="/communities" 
-              className="text-gray-700 dark:text-dark-text hover:text-proddit-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              className="text-gray-700 dark:text-dark-text hover:text-tribble-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
             >
               Communities
             </Link>
@@ -43,25 +43,25 @@ const Navbar = () => {
               <>
                 <Link 
                   to="/chats" 
-                  className="text-gray-700 dark:text-dark-text hover:text-proddit-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-gray-700 dark:text-dark-text hover:text-tribble-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   Chats
                 </Link>
                 <Link 
                   to="/study-rooms" 
-                  className="text-gray-700 dark:text-dark-text hover:text-proddit-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-gray-700 dark:text-dark-text hover:text-tribble-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   Study Rooms
                 </Link>
                 <Link 
                   to="/tasks" 
-                  className="text-gray-700 dark:text-dark-text hover:text-proddit-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-gray-700 dark:text-dark-text hover:text-tribble-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   Tasks
                 </Link>
                 <Link 
                   to="/habits" 
-                  className="text-gray-700 dark:text-dark-text hover:text-proddit-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-gray-700 dark:text-dark-text hover:text-tribble-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   Habits
                 </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
             {user && (
               <Link 
                 to="/create-community" 
-                className="text-gray-700 dark:text-dark-text hover:text-proddit-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-gray-700 dark:text-dark-text hover:text-tribble-orange px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
                 Create Community
               </Link>
@@ -85,12 +85,12 @@ const Navbar = () => {
                 <div className="flex items-center space-x-3 bg-gray-100 dark:bg-dark-card rounded-full px-4 py-2">
                   <div className="flex items-center space-x-2">
                     <span className="text-sm text-gray-600 dark:text-dark-text-secondary">Karma:</span>
-                    <span className="text-sm font-bold text-proddit-orange">{user.karma || 0}</span>
+                    <span className="text-sm font-bold text-tribble-orange">{user.karma || 0}</span>
                   </div>
                   <div className="w-1 h-4 bg-gray-300 dark:bg-dark-border rounded-full"></div>
                   <Link 
                     to={`/profile/${user.username}`}
-                    className="text-sm font-semibold text-gray-900 dark:text-dark-text hover:text-proddit-orange transition-colors duration-200"
+                    className="text-sm font-semibold text-gray-900 dark:text-dark-text hover:text-tribble-orange transition-colors duration-200"
                   >
                     u/{user.username}
                   </Link>
